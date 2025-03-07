@@ -11,3 +11,22 @@ function gameLoop($nomeTreinador){
 }
 
 gameLoop('Pedro');
+
+
+// #9 ..revelar qual a especie de monstro que apareceu
+$wildPokemonList = [
+    'Pikachu', 
+    'Bulbassauro', 
+    'Charmander',
+    'Squirtle',
+    'Ditto',
+    'Pidgey',
+    'Magikarp',
+    'Lucario'
+];
+
+function wildPokemonAppeared($wildPokemonList){
+    return $wildPokemonList[array_rand($wildPokemonList)];
+}
+
+echo wildPokemonAppeared($wildPokemonList) . PHP_EOL;

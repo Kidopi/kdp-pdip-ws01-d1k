@@ -1,10 +1,16 @@
+
 <?php
-    echo "Hello World!".PHP_EOL;
+// ./src/Utils.php
+require('src/Utils.php');
 
-    // Take all elements except the first one (the script name)
-    $entrada = array_slice($argv, 1);
-    
-    echo "Entrada: ".print_r($entrada, true).PHP_EOL;
-?>
+    $appName = "PokeAdventure 0.0.1";
+    $time = date("H:i");
+    $trainerName = $argv[1];
 
-require'src/Utils.php';
+    showMessage("$appName".PHP_EOL.
+    "Hora da execução: $time".PHP_EOL.
+    "Bem-vindo, Treinador $trainerName!".PHP_EOL);
+
+    $mensagens = ["Ufa! Treinador ${trainerName}, passamos por matinhos e nada aconteceu.",
+"Eita, prepare-se um Pokemon está bem á sua frente",
+"Olá, gritou uma personagem de longe. Vamos conversar?"];

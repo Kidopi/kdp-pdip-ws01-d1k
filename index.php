@@ -11,29 +11,30 @@ showMessage("Bem-vindo ao " . $nomeAplicacao . "!" . PHP_EOL);
 showMessage("Hora atual: " . $horario . PHP_EOL);
 showMessage("Saudações, " . $nomeTreinador . "!" . PHP_EOL);
 
-function gameLoop($nomeTreinador) 
+function gameLoop($nomeTreinador, array $wildPokemonList) 
 {
-    $valor = random_int(1, 3);
+    $valor = 2;
     if($valor == 1) {
         showMessage("Ufa! Treinador " .$nomeTreinador. ", passamos por matinhos e nada aconteceu." . PHP_EOL); 
     }
     if($valor == 2) {
-        showMessage("Eita, prepare-se um ". wildPokemonAppeared()." está bem á sua frente" . PHP_EOL);
+        showMessage("Eita, prepare-se um ". wildPokemonAppeared($wildPokemonList)." está bem á sua frente" . PHP_EOL);
     }
     if($valor == 3) {
         showMessage("Olá, gritou uma personagem de longe. Vamos conversar?" . PHP_EOL);
     }
 }
 
-gameLoop($nomeTreinador);
-
 $wildPokemonList = ['Pikachu', 'Bulbassaur', 'Charmander', 'Squirtle', 'Ditto', 'Pidgey', 'Magikarp', 'Lucario'];
 
+gameLoop($nomeTreinador, $wildPokemonList);
 
-function wildPokemonAppeared(){
+function wildPokemonAppeared(array $wildPokemonList)
+{
    $valorPokemon = random_int(0, 7);
-   return $valorPokemon;
+   for($i = 0; $i < count($wildPokemonList); $i++){
+       if($valorPokemon == $i){
+           return $wildPokemonList[$i];
+       }
+   } 
 }
-
-$pokemon = wildPokemonAppeared();
-echo $pokemon;

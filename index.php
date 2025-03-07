@@ -18,7 +18,7 @@ function gameLoop($nomeTreinador)
         showMessage("Ufa! Treinador " .$nomeTreinador. ", passamos por matinhos e nada aconteceu." . PHP_EOL); 
     }
     if($valor == 2) {
-        showMessage("Eita, prepare-se um Pokemon está bem á sua frente" . PHP_EOL);
+        showMessage("Eita, prepare-se um ". wildPokemonAppeared()." está bem á sua frente" . PHP_EOL);
     }
     if($valor == 3) {
         showMessage("Olá, gritou uma personagem de longe. Vamos conversar?" . PHP_EOL);
@@ -26,3 +26,14 @@ function gameLoop($nomeTreinador)
 }
 
 gameLoop($nomeTreinador);
+
+$wildPokemonList = ['Pikachu', 'Bulbassaur', 'Charmander', 'Squirtle', 'Ditto', 'Pidgey', 'Magikarp', 'Lucario'];
+
+
+function wildPokemonAppeared(){
+   $valorPokemon = random_int(0, 7);
+   return $valorPokemon;
+}
+
+$pokemon = wildPokemonAppeared();
+echo $pokemon;

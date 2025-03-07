@@ -6,3 +6,5 @@
     
     echo "Entrada: ".print_r($entrada, true).PHP_EOL;
 ?>
+
+require'src/Utils.php';

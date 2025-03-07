@@ -6,8 +6,8 @@ $horario = date('H:i');
 
 $nomeTreinador = isset($argv[1]) ? $argv[1] : 'Treinador desconhecido';
 
-$message = "Bem-vindo ao " . $nomeAplicacao . "!\n";
-$message .= "Hora atual: " . $horario . "\n";
-$message .= "Saudações, " . $nomeTreinador . "!";
+$message = "Bem-vindo ao " . $nomeAplicacao . "!" . PHP_EOL;
+$message .= "Hora atual: " . $horario . PHP_EOL;
+$message .= "Saudações, " . $nomeTreinador . "!" . PHP_EOL;
 
 echo $message;

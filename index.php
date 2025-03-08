@@ -1,31 +1,15 @@
 <?php
 require 'src/Utils.php';
+require 'src/GameEngine.php';
 
-$wildPokemonList = [
-    'Pikachu', 
-    'Bulbassauro', 
-    'Charmander',
-    'Squirtle',
-    'Ditto',
-    'Pidgey',
-    'Magikarp',
-    'Lucario'
-];
+$game = new GameEngine();
 
-function wildPokemonAppeared($wildPokemonList){
-    return $wildPokemonList[array_rand($wildPokemonList)];
-}
+$trainer = ($argc > 1)? $argv[1]: "Ash";
 
-function gameLoop($nomeTreinador, $nomePokemon){
 
-    $mensagem = ["Ufa! Treinador $nomeTreinador, passamos por matinhos e nada aconteceu.",
-    "Eita, prepare-se que o $nomePokemon está bem á sua frente",
-    "Olá, gritou uma personagem de longe. Vamos conversar?"];
+$pokemonName = $game->wildPokemonList[array_rand($game->wildPokemonList)];
 
-    echo $mensagem[array_rand($mensagem)] . PHP_EOL;
-}
 
-$nomeTreinador = "Pedro";
-$nomePokemon = wildPokemonAppeared($wildPokemonList);
+$game->runLoop($trainer,$pokemonName);
 
-gameLoop($nomeTreinador, $nomePokemon);
+?>

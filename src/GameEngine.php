@@ -1,6 +1,7 @@
 <?php
     class GameEngine{
         
+        # Lista de pokemons possíveis para aleatorização em wildPokemonAppearedDo()
         public $wildPokemonList = ["Pikachu",
         "Bulbassaur",
         "Charmander",
@@ -14,9 +15,10 @@
 
         # Mostra informações relevantes e boas vindas
         public function welcomeDo(){
+            global $argv;
             $appName = "PokeAdventure 0.0.2";
             $time = date("H:i");
-            $trainerName = $argv[1] ?? 'treinador';
+            $trainerName = $argv[1] ?? '';
 
             showMessage("$appName".PHP_EOL.
             "Hora da execução: $time".PHP_EOL.
